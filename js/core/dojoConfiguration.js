@@ -11,9 +11,8 @@
      parseOnLoad: true,
      async: true,
      baseURL: root,
-     dynamicConfig:false, //true表示配置为动态，从systemConfigUrl中获取，false表示配置为静态，从systemConfigJson中获取
-     systemConfigJson:"/js/config.json",
-     systemConfigUrl:"",
+     systemConfigType:"json", //json表示从静态文件里读取，BeX表示从BeX的BAAS里面读取
+     systemConfigUrl:"/js/config.json",
      packages: [{
          name: "ytportal",
          location: root

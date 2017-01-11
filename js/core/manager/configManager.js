@@ -6,7 +6,21 @@
 *
 *
 **/
-define([
-],function() {
+define(["core/appEvent","dojo/request","manager/configData","dojo/_base/declare",
+    "esri/config", "esri/urlUtils"
+],function(appEvent,request,configData,declare,esriConfig,urlUtils) {
+    return declare("ConfigManager",null,{
+        loadConfigData:function()
+        {
+            request.get(dojoConfig.systemConfigUrl,{handleAs:"json"}).then(
+                function (result) {
+                    configData.readFromJson(result,dojoConfig.systemConfigType);
+                    appEvent.dispatchEvent(appEvent.CONFIG_LOAD);
+                }
+            ,function (err) {
+                    console.log("load config error!",err);
+                })
+        }
+    });
 
 });
