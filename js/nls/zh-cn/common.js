@@ -64,5 +64,7 @@ define({
     undo: "撤消",
     view: "查看",
     visibility: {hide: "隐藏", show: "显示", toggle: "切换"},
-    warning: "警告"
+    warning: "警告",
+
+    legend:"图例"
 });

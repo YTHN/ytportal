@@ -14,27 +14,36 @@ define(["dojo/_base/declare",
     "dijit/layout/TabContainer",
     "dijit/layout/AccordionContainer",
     "dijit/layout/AccordionPane",
+    "dojo/dom",
+    "dojo/dom-style",
     "dojo/i18n!application/js/nls/common",
     "dojo/domReady!"
-], function (declare, domIdManager, MenuBar, Toolbar, ContentPane, BorderContainer, TabContainer, AccordionContainer, AccordionPane, sharedNls) {
+], function (declare, domIdManager, MenuBar, Toolbar, ContentPane, BorderContainer, TabContainer, AccordionContainer, AccordionPane, dom,domStyle,sharedNls) {
     return declare("LayoutManager", null, {
         sharedNls: sharedNls,
+        bc:null,
         constructor:function(){},
         startup: function () {
             //初始化最开始的界面
-            var bc = new BorderContainer({
+            bc = new BorderContainer({
                 gutters: true,
                 liveSplitters: false,
-                style: "height:100%;width:100%",
+                style: "height:100%;width:100%;padding:0px;",
                 id: domIdManager.mainPageContainer
             });
+            var sizett=ytProtal.configData.uiSize*2+7;
             var tc=new ContentPane({
                 region:"top",
                 splitter:false,
                 minSize:60,
-                style:"height:60px",
+                style:"height:"+sizett+"px;padding:0px;margin:0px",
                 id:domIdManager.topPanelContainer
             });
+            //初始化最初的MenuBar和Toolbar
+            var menubar=new MenuBar({style:"height:"+ytProtal.configData.uiSize+"px",id:domIdManager.mainMenuContainer});
+            var toolbar=new Toolbar({style:"height:"+ytProtal.configData.uiSize+"px",id:domIdManager.mainToolbarContainer});
+            tc.addChild(menubar);
+            tc.addChild(toolbar);
             var lc=new TabContainer({
                 region:"leading",
                 splitter:true,
@@ -45,16 +54,19 @@ define(["dojo/_base/declare",
 
             var cc=new ContentPane({
                 region:"center",
+                style: "padding:0px;",
                 id:domIdManager.centerPanelContainer
             });
 
             var cbc = new BorderContainer({
                 gutters: true,
+                style: "height:100%;width:100%;padding:0px;",
                 liveSplitters: false
             });
 
             var cmc=new ContentPane({
                 region:"center",
+
                 id:domIdManager.mapPanelContainer
             });
 
@@ -82,6 +94,48 @@ define(["dojo/_base/declare",
             bc.addChild(rc);
             bc.placeAt(document.body);
             bc.startup();
+            this.testLayout();
+        },
+        testLayout:function()
+        {
+            var left=dijit.byId(domIdManager.leftPanelContainer);
+            var lg=new ContentPane({
+                title:sharedNls.legend,
+                content:"TTTTTTTTTTTTTTTTTTTTTT"
+            });
+            lg.placeAt(left);
+            lg.startup();
+
+            if(!left.hasChildren())
+            {
+                domStyle.set(left.domNode,"display","none");
+            }
+            else
+            {
+                domStyle.set(left.domNode,"display","block");
+            }
+            var right=dijit.byId(domIdManager.rightPanelContainer);
+            if(!right.hasChildren())
+            {
+                domStyle.set(right.domNode,"display","none");
+            }
+            else
+            {
+                domStyle.set(right.domNode,"display","block");
+            }
+            var bottom=dijit.byId(domIdManager.bottomPanelContainer);
+            if(!bottom.hasChildren())
+            {
+                domStyle.set(bottom.domNode,"display","none");
+            }
+            else
+            {
+                domStyle.set(bottom.domNode,"display","block");
+            }
+
+            var mainBorder=dijit.byId(domIdManager.mainPageContainer);
+            mainBorder.layout();
+
         }
     });
 });

@@ -72,7 +72,9 @@ define({
         undo: "Undo",
         view: "View",
         visibility: {hide: "Hide", show: "Show", toggle: "Toggle"},
-        warning: "Warning"
+        warning: "Warning",
+
+        legend:"Legend"
     },
     "zh-cn": true
 });

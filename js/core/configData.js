@@ -19,7 +19,11 @@ define(function() {
         proxyUrl:"",
         userName:"",
         cookie:"",
-        maxExtent:null //该用户允许使用的最大范围
+        maxExtent:null ,//该用户允许使用的最大范围
+
+
+        uiSizeType:"small", //small,middle,large
+        uiSize:"30"
 
 
 

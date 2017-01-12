@@ -13,6 +13,7 @@
      baseURL: root,
      systemConfigType:"json", //json表示从静态文件里读取，BeX表示从BeX的BAAS里面读取
      systemConfigUrl:"/js/config/defaultconfig.json",
+     locale:"zh-cn",
      packages: [{
          name: "application",
          location: root
