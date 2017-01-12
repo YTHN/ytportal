@@ -11,7 +11,7 @@ require(["dojo/_base/declare","dojo/request","core/appEvent","core/configData",
     "dojo/domReady!"],function(declare,request,appEvent,configData,esriConfig,configManager,appManager) {
 
     ytProtal={};
-    ytProtal.configData=configData;
+    ytProtal.configData={};
     ytProtal.shareOptions={};
     ytProtal.appManager={};
     var url=root+dojoConfig.systemConfigUrl;

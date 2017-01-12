@@ -1,4 +1,144 @@
 {
-  "ApplicationHeaderTitle":"DEMO",
-  "ApplicationHeaderIcon":"DEMO.png"
+  "SystemInfo": {
+    "Name": "DEMO",
+    "Icon": "DEMO.png",
+
+    "Description": "",
+    "UserName": "Demo",
+    "MaxExtent": {
+
+      "MinX": 0,
+      "MinY": 0,
+      "MaxX": 0,
+      "MaxY": 0
+    },
+    "DefaultBaseMap": "",
+    "DefaultWorkMap": ""
+  },
+  "UserInfo": {
+    "Name": "DEMO",
+    "Cookie": ""
+  },
+  "SystemMaps": [
+    {
+      "MapID": "222",
+      "MapType": "Basemap",
+      "DisplayOrder": 1
+    },
+    {
+      "MapID": "111",
+      "MapType": "Basemap",
+      "DisplayOrder": 0
+    },
+    {
+      "MapID": "222",
+      "MapType": "Pipeline",
+      "DisplayOrder": 2
+    }
+
+  ],
+  "Maps": [
+    {
+      "MapID": "111",
+      "Name": "111",
+      "Description": "22222",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "MinX": 0,
+      "MinY": 0,
+      "MaxX": 0,
+      "MaxY": 0,
+      "CenterX": 0,
+      "CenterY": 0,
+      "MapType": ""
+    },{
+      "MapID": "222",
+      "Name": "222",
+      "Description": "222222",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "MinX": 0,
+      "MinY": 0,
+      "MaxX": 0,
+      "MaxY": 0,
+      "CenterX": 0,
+      "CenterY": 0,
+      "MapType": ""
+    }
+  ],
+  "MapDetails": [
+    {
+      "MapID": "111",
+      "ServiceID": "111",
+      "DisplayOrder": 2
+    },{
+      "MapID": "222",
+      "ServiceID": "222",
+      "DisplayOrder": 2
+    },{
+      "MapID": "222",
+      "ServiceID": "333",
+      "DisplayOrder": 1
+    },{
+      "MapID": "111",
+      "ServiceID": "444",
+      "DisplayOrder": 1
+    }
+  ],
+  "MapServices": [
+    {
+      "ServiceID": "111",
+      "Name": "S111",
+      "Url": "2222222222222",
+      "Description": "",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },
+    {
+      "ServiceID": "222",
+      "Name": "2222",
+      "Url": "2222222222222",
+      "Description": "",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },{
+      "ServiceID": "333",
+      "Name": "333",
+      "Url": "33333",
+      "Description": "",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },{
+      "ServiceID": "444",
+      "Name": "444",
+      "Url": "4444444444",
+      "Description": "",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    }
+  ]
 }
