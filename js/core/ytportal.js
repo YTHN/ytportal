@@ -13,6 +13,7 @@ require(["dojo/_base/declare","dojo/request","core/appEvent","core/configData",
     ytProtal={};
     ytProtal.configData=configData;
     ytProtal.shareOptions={};
+    ytProtal.appManager={};
     var url=root+dojoConfig.systemConfigUrl;
     request(url, {handleAs: "json"}).then(function (json) {
         _cfgManager=new ConfigManager();
@@ -20,6 +21,7 @@ require(["dojo/_base/declare","dojo/request","core/appEvent","core/configData",
         alert("Start App Manager");
         _appManager=new appManager();
         _appManager.startup();
+        ytProtal.appManager=_appManager;
     }, function (err) {
         alert("error read configuration json file " + err);
     });
