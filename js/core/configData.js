@@ -8,6 +8,7 @@
 *
 **/
 define(function() {
+
     var _instance={
         applicationHeaderTitle:"",//系统名称
         applicationHeaderIcon:"",//系统图标
@@ -18,31 +19,9 @@ define(function() {
         proxyUrl:"",
         userName:"",
         cookie:"",
-        maxExtent:null, //该用户允许使用的最大范围
+        maxExtent:null //该用户允许使用的最大范围
 
-        readFromJson:function (jsonObj, cfgType) {
-            if(cfgType=="json")
-            {
-                this._readFromJsonFile(jsonObj);
-            }
-            else if(cfgType=="BeX")
-            {
-                this._readFromBeX5(jsonObj);
-            }
-        },
 
-        _readFromJsonFile:function(jsonObj){
-            this.applicationHeaderTitle=jsonObj.applicationHeaderTitle;
-            this.applicationHeaderIcon=jsonObj.applicationHeaderIcon;
-            this.copyright=json.copyright;
-            this.clientMaps=json.clientMaps;
-            this.modules=json.modules;
-            this.proxyUrl=json.proxyUrl;
-            this.userName=json.userName;
-            this.cookie=json.cookie;
-            this.maxExtent=json.maxExtent;
-        },
-        _readFromBeX5:function(jsonObj){}
 
     };
     return _instance;

@@ -12,22 +12,22 @@
      async: true,
      baseURL: root,
      systemConfigType:"json", //json表示从静态文件里读取，BeX表示从BeX的BAAS里面读取
-     systemConfigUrl:"/js/config.json",
+     systemConfigUrl:"/js/config/defaultconfig.json",
      packages: [{
-         name: "ytportal",
+         name: "application",
          location: root
-     }, {
-         name: "widgets",
-         location: root + '/js/library/widgets'
+     },{
+         name:"core",
+         location:root+'/js/core'
+
      }, {
          name: "manager",
-         location: root + '/js/library/core/manager'
+         location: root + '/js/core/manager'
      },{
-             name:"core",
-             location:root+'/js/library/core'
-
-     },{
+         name: "widgets",
+         location: root + '/js/widgets'
+     }, {
          name:"pulgins",
-         location:root+'/js/library/plugins'
+         location:root+'/js/plugins'
      }]
  };

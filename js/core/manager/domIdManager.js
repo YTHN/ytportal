@@ -10,6 +10,8 @@ define(function() {
     var _instance={
         mainPageContainer:"YT_MAINPAGE",
 
+        topPanelContainer:"YT_TOP_CONTAINER",
+
         mainMenuContainer:"YT_MAINMENU",
         mainMenuItemBaseName:"YT_MAINMENUITEM",
 
@@ -19,6 +21,9 @@ define(function() {
         leftPanelContainer:"YT_LEFT_CONTAINER",
         leftTabBaseName:"YT_LEFT_TAB",
         leftSiderButton:"YT_SIDER_LEFT",
+
+        centerPanelContainer:"YT_CENTER_CONTAINER",
+        mapPanelContainer:"YT_MAP_CONTAINER",
 
         rightPanelContainer:"YT_RIGHT_CONTAINER",
         rightTabBaseName:"YTL_RIGHT_TAB",
