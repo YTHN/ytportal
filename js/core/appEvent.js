@@ -33,14 +33,27 @@ define(["dojo/topic"],function (topic) {
 
         MAP_LOAD_COMPLETE:"mapLoadComplete",
         MAP_EXTENT_CHANGE:"mapExtentChange",
+        MAP_WIDGET_CREATE:"mapWidgetCreate",
+
+
+        /**
+         * 向系统增加地图交互工具。事件对象：{tool:BaseTool需要添加的Tool，hookId:挂接的MapWidgetId}
+         */
+        APPEND_TOOL: "appendTool",
 
 
 
+        WIDGET_LOADED:"widgetLoaded",
+        WIDGET_OPENED:"widgetOpened",
+        WIDGET_CLOSED:"widgetClosed",
 
+
+        /**加载事件监听*/
         addEventListener:function (eventName, handler) {
             topic.subscribe(eventName,handler);
         },
-        removeEventListener:function (eventName, data) {
+        /**派发系统事件*/
+        publishEvent:function (eventName, data) {
             try{
                 topic.publish(eventName,data);
             }catch(error){

@@ -1,0 +1,67 @@
+.mapwidget-base {
+    height: 100%;
+    width: 100%;
+}
+
+.mapwidget-basemap {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mapwidget-timeslider {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+}
+
+.mapwidget-mapswitch {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+.mapwidget-overview {
+    width: 205px;
+    height: 144px;
+}
+
+.mapwidget-navigation {
+    top: 20px;
+    right: 80px;
+}
+
+.mapwidget-map-cover {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mapwidget-map-box {
+    height: 100%;
+    width: 100%;
+}
+
+.esriControlsBR {
+    left: 5px !important;
+    right: initial !important;
+}
+.esriAttribution{
+    background: rgba(255,255,255,0.1) !important;
+}
+
+.attribution-ytportal-icon {
+    background-image: url('../../themes/images/not-available.png');
+    width: 84px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 1px 2px 0px -2px;
+}
+#LongLatitude{
+    margin-left: 10px;
+    font-weight:bold;
+}

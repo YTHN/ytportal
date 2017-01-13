@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <link rel="stylesheet" href="http://localhost/arcgis_js_api/library/4.2/4.2/dijit/themes/claro/claro.css">
-    <style type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Get started with MapView - Create a 2D map</title>
+    <link href="http://localhost/arcgis_js_api/library/4.2/4.2/esri/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="http://localhost/arcgis_js_api/library/4.2/4.2/dijit/themes/claro/claro.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="js/themes/styles/theme.css" rel="stylesheet" type="text/css"/>
+    <link href="js/themes/styles/mediaQueries.css" rel="stylesheet" type="text/css"/>
+    <link id="theme" rel="stylesheet" type="text/css"/>
+    <script src="js/core/modernizr-2.6.2.js" type="text/javascript"></script>
+    <script src="js/core/dojoConfiguration.js" type="text/javascript"></script>
+    <script src="//localhost/arcgis_js_api/library/4.2/4.2/init.js" type="text/javascript"></script>
+    <style>
         html, body {
-            width: 100%;
             height: 100%;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        #borderContainerTwo {
+            margin: 0px;
+            padding: 0px;
             width: 100%;
-            height: 100%;
+            overflow: hidden !important;
+            font-size: 11px !important;
+            font-family: Verdana !important;
+            visibility: visible !important;
+            color: #808080;
         }
     </style>
-    <script>dojoConfig = {parseOnLoad: true}</script>
-    <script src='//localhost/arcgis_js_api/library/4.2/4.2/dojo/dojo.js'></script>
-
     <script>
-        require(["dojo/parser", "dijit/layout/ContentPane", "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/AccordionContainer", "dijit/layout/AccordionPane","dijit/MenuBar","dijit/Toolbar"]);
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/layers/MapImageLayer",
+            "dojo/domReady!"
+        ], function(Map, MapView,MapImageLayer) {
+            // Code to create the map and view will go here
+            var map=new Map({basemap:""});
+            var layer=new MapImageLayer({
+                url:"http://localhost:6080/arcgis/rest/services/排水管线/MapServer"
+            });
+            map.add(layer);
+            var mapView=new MapView({
+                map:map,
+                container:"mapView"
+            });
+
+
+            //layer.then(function(){map.extent=layer.fullExtent});
+
+        });
     </script>
 </head>
 <body class="claro">
-<div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:true, liveSplitters:false"
-     id="borderContainerTwo" style="padding: 0px;">
-    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top', splitter:false">
-        Hi, usually here you would have important information, maybe your company logo, or functions you need to access
-        all the time..
-    </div>
-    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="minSize:20, region:'leading', splitter:true"
-         style="width: 300px;display: none" id="leftAccordion">
-        Left Content
-    </div><!-- end AccordionContainer -->
-    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="padding:0px;">
-        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:true, liveSplitters:false"
-             id="borderContainerTwo2">
-            <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region:'center'"></div>
-            <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="minSize:20,region:'bottom', splitter:true" style="height: 100px;">
-                trailing Content
-            </div>
-        </div>
-    </div><!-- end TabContainer -->
-    <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="minSize:20,region:'trailing', splitter:true" style="width: 300px;">
-        trailing Content
-    </div><!-- end TabContainer -->
-    <!-- end TabContainer -->
-</div><!-- end BorderContainer -->
+<div id="mapView" style="width: 100%;height: 100%"/>
 </body>
 </html>

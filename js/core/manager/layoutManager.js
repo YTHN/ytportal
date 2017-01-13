@@ -41,7 +41,7 @@ define(["dojo/_base/declare",
                 style: "height:100%;width:100%;padding:0px;",
                 id: domIdManager.mainPageContainer
             });
-            var sizett=ytProtal.configData.uiSize*2+7;
+            var sizett=dojoConfig.uiSize*2+7;
             tc=new ContentPane({
                 region:"top",
                 splitter:false,
@@ -50,8 +50,8 @@ define(["dojo/_base/declare",
                 id:domIdManager.topPanelContainer
             });
             //初始化最初的MenuBar和Toolbar
-            var menubar=new MenuBar({style:"height:"+ytProtal.configData.uiSize+"px",id:domIdManager.mainMenuContainer});
-            var toolbar=new Toolbar({style:"height:"+ytProtal.configData.uiSize+"px",id:domIdManager.mainToolbarContainer});
+            var menubar=new MenuBar({style:"height:"+dojoConfig.uiSize+"px",id:domIdManager.mainMenuContainer});
+            var toolbar=new Toolbar({style:"height:"+dojoConfig.uiSize+"px",id:domIdManager.mainToolbarContainer});
             tc.addChild(menubar);
             tc.addChild(toolbar);
             lc=new TabContainer({
@@ -109,33 +109,23 @@ define(["dojo/_base/declare",
         resetLayout:function()
         {
             var left=dijit.byId(domIdManager.leftPanelContainer);
-            if(!left.hasChildren())
-            {
-                domStyle.set(left.domNode,"display","none");
-            }
-            else
-            {
-                domStyle.set(left.domNode,"display","block");
+            if (left.hasChildren()) {
+                domStyle.set(left.domNode, "display", "block");
+            } else {
+                domStyle.set(left.domNode, "display", "none");
             }
             var right=dijit.byId(domIdManager.rightPanelContainer);
-            if(!right.hasChildren())
-            {
-                domStyle.set(right.domNode,"display","none");
-            }
-            else
-            {
-                domStyle.set(right.domNode,"display","block");
+            if (right.hasChildren()) {
+                domStyle.set(right.domNode, "display", "block");
+            } else {
+                domStyle.set(right.domNode, "display", "none");
             }
             var bottom=dijit.byId(domIdManager.bottomPanelContainer);
-            if(!bottom.hasChildren())
-            {
-                domStyle.set(bottom.domNode,"display","none");
+            if (bottom.hasChildren()) {
+                domStyle.set(bottom.domNode, "display", "block");
+            } else {
+                domStyle.set(bottom.domNode, "display", "none");
             }
-            else
-            {
-                domStyle.set(bottom.domNode,"display","block");
-            }
-
             var mainBorder=dijit.byId(domIdManager.mainPageContainer);
             mainBorder.layout();
 
@@ -146,10 +136,9 @@ define(["dojo/_base/declare",
             var lg=new ContentPane({
                 title:sharedNls.legend,
                 closable:true,
-                content:"TTTTTTTTTTTTTTTTTTTTTT"
+                content:""
             });
             lg.on("close",this.resetLayout);
-
             lg.placeAt(left);
             lg.startup();
         }

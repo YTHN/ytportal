@@ -7,7 +7,9 @@
  **/
 define([
         "core/appEvent",
+        "manager/configManager",
         "manager/layoutManager",
+        "manager/mapManager",
         "dojo/dom",
         "dojo/_base/declare",
         "dojo/on",
@@ -23,7 +25,9 @@ define([
         "dojo/domReady!"
     ],
     function (AppEvent,
+              configManager,
               layoutManager,
+              mapManager,
               dom,
               declare,
               on,
@@ -38,13 +42,18 @@ define([
         return declare([_WidgetBase], {
             sharedNls: sharedNls,
             _layoutManager:null,
+            _mapManager:null,
+            _configManager:null,
             constructor:function()
             {
-                _layoutManager=new layoutManager();
+                _configManager=new ConfigManager();
+                _layoutManager=new LayoutManager();
+                _mapManager=new MapManager();
             },
             startup:function()
             {
                 _layoutManager.startup();
+                _configManager.loadConfigData(root+dojoConfig.systemConfigUrl);//在引导配置文件之前，各个管理器必须先要初始化，以保证事件监听被加载，如mapManager是在监听配置文件被引导后触发地图加载事件
             }
         })
 

@@ -2,18 +2,17 @@
   "SystemInfo": {
     "Name": "DEMO",
     "Icon": "DEMO.png",
-
+    "Title":"Demo Application",
     "Description": "",
-    "UserName": "Demo",
     "MaxExtent": {
-
       "MinX": 0,
       "MinY": 0,
       "MaxX": 0,
       "MaxY": 0
     },
     "DefaultBaseMap": "",
-    "DefaultWorkMap": ""
+    "DefaultWorkMap": "1",
+    "DefaultViewType":"Map"
   },
   "UserInfo": {
     "Name": "DEMO",
@@ -21,8 +20,8 @@
   },
   "SystemMaps": [
     {
-      "MapID": "222",
-      "MapType": "Basemap",
+      "MapID": "1",
+      "MapType": "Pipeline",
       "DisplayOrder": 1
     },
     {
@@ -39,9 +38,9 @@
   ],
   "Maps": [
     {
-      "MapID": "111",
-      "Name": "111",
-      "Description": "22222",
+      "MapID": "1",
+      "Name": "综合管线图",
+      "Description": "综合管线图",
       "MinScale": 0,
       "MaxScale": 0,
       "MinX": 0,
@@ -50,7 +49,7 @@
       "MaxY": 0,
       "CenterX": 0,
       "CenterY": 0,
-      "MapType": ""
+      "MapType": "Pipeline"
     },{
       "MapID": "222",
       "Name": "222",
@@ -68,9 +67,49 @@
   ],
   "MapDetails": [
     {
-      "MapID": "111",
-      "ServiceID": "111",
+      "MapID": "1",
+      "ServiceID": "1",
+      "DisplayOrder": 1
+    },
+    {
+      "MapID": "1",
+      "ServiceID": "2",
       "DisplayOrder": 2
+    },
+    {
+      "MapID": "1",
+      "ServiceID": "3",
+      "DisplayOrder": 3
+    },
+    {
+      "MapID": "1",
+      "ServiceID": "4",
+      "DisplayOrder": 4
+    },
+    {
+      "MapID": "1",
+      "ServiceID": "5",
+      "DisplayOrder": 5
+    },
+    {
+      "MapID": "1",
+      "ServiceID": "6",
+      "DisplayOrder": 6
+    },
+    {
+      "MapID": "1",
+      "ServiceID": "7",
+      "DisplayOrder": 7
+    },
+    {
+      "MapID": "1",
+      "ServiceID": "8",
+      "DisplayOrder": 8
+    },
+    {
+      "MapID": "1",
+      "ServiceID": "9",
+      "DisplayOrder": 9
     },{
       "MapID": "222",
       "ServiceID": "222",
@@ -87,10 +126,10 @@
   ],
   "MapServices": [
     {
-      "ServiceID": "111",
-      "Name": "S111",
-      "Url": "2222222222222",
-      "Description": "",
+      "ServiceID": "1",
+      "Name": "给水管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/给水管线/MapServer",
+      "Description": "给水管线",
       "Coordsys": "",
       "MinScale": 0,
       "MaxScale": 0,
@@ -101,10 +140,108 @@
       "IsUsing": true
     },
     {
-      "ServiceID": "222",
-      "Name": "2222",
-      "Url": "2222222222222",
-      "Description": "",
+      "ServiceID": "2",
+      "Name": "中水管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/中水管线/MapServer",
+      "Description": "中水管线",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },
+    {
+      "ServiceID": "3",
+      "Name": "排水管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/排水管线/MapServer",
+      "Description": "排水管线",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },
+    {
+      "ServiceID": "4",
+      "Name": "热力管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/热力管线/MapServer",
+      "Description": "热力管线",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },
+    {
+      "ServiceID": "5",
+      "Name": "通讯管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/通讯管线/MapServer",
+      "Description": "通讯管线",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },
+    {
+      "ServiceID": "6",
+      "Name": "燃气管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/燃气管线/MapServer",
+      "Description": "燃气管线",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },
+    {
+      "ServiceID": "7",
+      "Name": "供电管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/供电管线/MapServer",
+      "Description": "供电管线",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },
+    {
+      "ServiceID": "8",
+      "Name": "人防管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/人防管线/MapServer",
+      "Description": "人防管线",
+      "Coordsys": "",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "ServiceType": "",
+      "GeometryUrl": "",
+      "Unit": "",
+      "RegisterDate": "2017-1-1",
+      "IsUsing": true
+    },
+    {
+      "ServiceID": "9",
+      "Name": "工业管线",
+      "Url": "http://localhost:6080/arcgis/rest/services/工业管线/MapServer",
+      "Description": "工业管线",
       "Coordsys": "",
       "MinScale": 0,
       "MaxScale": 0,
@@ -116,7 +253,7 @@
     },{
       "ServiceID": "333",
       "Name": "333",
-      "Url": "33333",
+      "Url": "",
       "Description": "",
       "Coordsys": "",
       "MinScale": 0,
@@ -129,7 +266,7 @@
     },{
       "ServiceID": "444",
       "Name": "444",
-      "Url": "4444444444",
+      "Url": "",
       "Description": "",
       "Coordsys": "",
       "MinScale": 0,

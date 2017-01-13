@@ -6,42 +6,17 @@
 *
 *
 **/
-require(["dojo/_base/declare","dojo/request","core/appEvent","core/configData",
-    "esri/config","manager/configManager","manager/appManager",
-    "dojo/domReady!"],function(declare,request,appEvent,configData,esriConfig,configManager,appManager) {
+require(["manager/appManager",
+    "dojo/domReady!"],function(appManager) {
 
-    ytProtal={};
-    ytProtal.configData={};
-    ytProtal.shareOptions={};
-    ytProtal.appManager={};
+    ytPortal={};
+    ytPortal.configData={};
+    ytPortal.shareOptions={};
+    ytPortal.appManager={};
     var url=root+dojoConfig.systemConfigUrl;
-    request(url, {handleAs: "json"}).then(function (json) {
-        _cfgManager=new ConfigManager();
-        _cfgManager.loadConfigData(json);
-        alert("Start App Manager");
-        _appManager=new appManager();
-        _appManager.startup();
-        ytProtal.appManager=_appManager;
-    }, function (err) {
-        alert("error read configuration json file " + err);
-    });
-
-
-
-   /* return declare("YTPortal",null,{
-        _configManager:null,
-
-        constructor:function () {
-          _configManager=new configManager();
-          var fun=lang.hitch(this,this.onConfigLoaded);
-          appEvent.addEventLsitener(appEvent.CONFIG_LOAD,fun);
-          _configManager.loadConfigData();
-        },
-        onConfigLoaded:function()
-        {
-            alert("Config Data Loaded");
-        }
-    });*/
+    _appManager=new appManager();
+    ytPortal.appManager=_appManager;
+    _appManager.startup();
 
 
 });

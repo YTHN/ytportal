@@ -24,6 +24,7 @@ define(function() {
 
         centerPanelContainer:"YT_CENTER_CONTAINER",
         mapPanelContainer:"YT_MAP_CONTAINER",
+        mapViewBaseName:"YT_MAP",
 
         rightPanelContainer:"YT_RIGHT_CONTAINER",
         rightTabBaseName:"YTL_RIGHT_TAB",
