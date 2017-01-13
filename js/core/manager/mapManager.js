@@ -27,7 +27,8 @@ define(["core/appEvent", "manager/domIdManager", "dojo/_base/declare", "dojo/_ba
                 id: "mainMapWidget",
                 cssPath: "widgets/viewSettings/mapWidget.css",
                 workmapJson: ytPortal.configData.Workmap,
-                basemapJson: ytPortal.configData.Basemaps
+                basemapsJson: ytPortal.configData.Basemaps,
+                defaultBasemapId:ytPortal.configData.SystemInfo.DefaultBaseMap
             });
             ytPortal.configData.mapWidgetId = "mainMapWidget";
             appEvent.publishEvent(appEvent.MAP_WIDGET_CREATE, {

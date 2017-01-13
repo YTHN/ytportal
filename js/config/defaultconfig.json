@@ -10,7 +10,7 @@
       "MaxX": 0,
       "MaxY": 0
     },
-    "DefaultBaseMap": "",
+    "DefaultBaseMap": "2",
     "DefaultWorkMap": "1",
     "DefaultViewType":"Map"
   },
@@ -25,13 +25,13 @@
       "DisplayOrder": 1
     },
     {
-      "MapID": "111",
+      "MapID": "2",
       "MapType": "Basemap",
       "DisplayOrder": 0
     },
     {
-      "MapID": "222",
-      "MapType": "Pipeline",
+      "MapID": "3",
+      "MapType": "Basemap",
       "DisplayOrder": 2
     }
 
@@ -51,8 +51,22 @@
       "CenterY": 0,
       "MapType": "Pipeline"
     },{
-      "MapID": "222",
-      "Name": "222",
+      "MapID": "2",
+      "Name": "基础底图",
+      "Description": "222222",
+      "MinScale": 0,
+      "MaxScale": 0,
+      "MinX": 0,
+      "MinY": 0,
+      "MaxX": 0,
+      "MaxY": 0,
+      "CenterX": 0,
+      "CenterY": 0,
+      "MapType": ""
+    }
+  ,{
+      "MapID": "3",
+      "Name": "基础底图",
       "Description": "222222",
       "MinScale": 0,
       "MaxScale": 0,
@@ -111,16 +125,12 @@
       "ServiceID": "9",
       "DisplayOrder": 9
     },{
-      "MapID": "222",
-      "ServiceID": "222",
-      "DisplayOrder": 2
-    },{
-      "MapID": "222",
-      "ServiceID": "333",
+      "MapID": "2",
+      "ServiceID": "10",
       "DisplayOrder": 1
     },{
-      "MapID": "111",
-      "ServiceID": "444",
+      "MapID": "3",
+      "ServiceID": "10",
       "DisplayOrder": 1
     }
   ],
@@ -251,23 +261,10 @@
       "RegisterDate": "2017-1-1",
       "IsUsing": true
     },{
-      "ServiceID": "333",
-      "Name": "333",
-      "Url": "",
-      "Description": "",
-      "Coordsys": "",
-      "MinScale": 0,
-      "MaxScale": 0,
-      "ServiceType": "",
-      "GeometryUrl": "",
-      "Unit": "",
-      "RegisterDate": "2017-1-1",
-      "IsUsing": true
-    },{
-      "ServiceID": "444",
-      "Name": "444",
-      "Url": "",
-      "Description": "",
+      "ServiceID": "10",
+      "Name": "基础底图",
+      "Url": "http://localhost:6080/arcgis/rest/services/基础底图/MapServer",
+      "Description": "基础底图",
       "Coordsys": "",
       "MinScale": 0,
       "MaxScale": 0,
